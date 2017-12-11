@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if @product.name.present? && @product.desc.present? && @product.origin.present? && @product.box.present? && @product.details.present? %>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -25,10 +25,7 @@
   <%= @product.details %>
 </p>
 
-<p>
-  <strong>Desc:</strong>
-  <%= @product.desc %>
-</p>
+<% end %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
